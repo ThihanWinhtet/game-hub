@@ -25,22 +25,27 @@ const useGame = () => {
 
 let [games, setGame] = useState<Game[]>([]);
 let [error, setError] = useState("");
+let [isLoading, setLoading] = useState(false);
 
 useEffect(() => {
     let controller = new AbortController();
+
+    setLoading(true);
   apiClient
     .get<FetchGame>("/games", {signal : controller.signal})
     .then((res) => {
       setGame(res.data.results);
+      setLoading(false);
     })
     .catch((err) => {
         if(err instanceof CanceledError) return;
       setError(err.message);
+      setLoading(false);
     });
 } , []);
 
 
-return {games, error};
+return {games, error, isLoading};
 }
 
 export default useGame;

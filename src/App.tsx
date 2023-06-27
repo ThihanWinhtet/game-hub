@@ -11,6 +11,7 @@ import SortSelector from "./Components/SortSelector";
 function App() {
   let [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   let [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
+  let [selectedSortOrder, setSelectedSortOrder] = useState('');
 
   return (
     <div>
@@ -35,9 +36,9 @@ function App() {
           <HStack paddingLeft={2} paddingBottom={5}>
 
           <PlatformSelector selectedPlatform={selectedPlatform} selectPlatform={(platform)=> setSelectedPlatform(platform)}></PlatformSelector>
-          <SortSelector></SortSelector>
+          <SortSelector sortOrde={selectedSortOrder} onSelectSortOrder={(selectedSortOrder)=> setSelectedSortOrder(selectedSortOrder)}></SortSelector>
           </HStack>
-          <GameGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenre}/>
+          <GameGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenre} selectedSortOrder={selectedSortOrder}/>
         </GridItem>
       </Grid>
     </div>

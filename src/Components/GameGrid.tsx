@@ -8,10 +8,11 @@ import { Genre } from "../hooks/useGenere";
 interface Props{
   selectedGenre : Genre | null;
   selectedPlatform : Platform | null;
+  selectedSortOrder : string;
 }
 
-function GameGrid({selectedGenre, selectedPlatform} : Props) {
-  let { data, error, isLoading } = useGame(selectedGenre, selectedPlatform);
+function GameGrid({selectedGenre, selectedPlatform,  selectedSortOrder} : Props) {
+  let { data, error, isLoading } = useGame(selectedGenre, selectedPlatform, selectedSortOrder);
   let skeleton = [1,2,3,4,5,6,7,8];
 
   return (

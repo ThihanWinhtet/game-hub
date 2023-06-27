@@ -9,7 +9,7 @@ interface Props{
 
 const GameHeading = ({selectedGenre, selectedPlatform} : Props) => {
   return (
-    <Heading as="h1" paddingBottom={5}> {selectedGenre && selectedGenre.name} {selectedPlatform && selectedPlatform.name} {selectedGenre || selectedPlatform ? 'Games' : ''}</Heading>
+    <Heading as="h1" paddingBottom={5}> {selectedGenre && selectedGenre.name} {selectedPlatform && selectedPlatform.name} {selectedGenre || selectedPlatform ? 'gg' : ''}</Heading>
   )
 }
 

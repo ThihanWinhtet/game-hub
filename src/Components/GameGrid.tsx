@@ -23,7 +23,7 @@ function GameGrid({selectedGenre, selectedPlatform} : Props) {
         spacing={3}
       >
       {isLoading && skeleton.map(s => <GameCardContainer key={s}><GameCardSkeleton /></GameCardContainer>)}
-        {data.map((game) => (
+        {!isLoading && data.map((game) => (
             <GameCardContainer key={game.id}>
                 <GameCard key={game.id} game={game}></GameCard>
             </GameCardContainer>

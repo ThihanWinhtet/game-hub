@@ -20,9 +20,9 @@ function GameGrid({selectedGenre, selectedPlatform,  selectedSortOrder, searchTe
     <>
       {error && <text>{error}</text>}
       <SimpleGrid
-        columns={{ sm: 1, lg: 3, md: 2, xl: 5 }}
+        columns={{ sm: 1, lg: 3, md: 2, xl: 4 }}
         padding={"10px"}
-        spacing={3}
+        spacing={6}
       >
       {isLoading && skeleton.map(s => <GameCardContainer key={s}><GameCardSkeleton /></GameCardContainer>)}
         {!isLoading && data.map((game) => (

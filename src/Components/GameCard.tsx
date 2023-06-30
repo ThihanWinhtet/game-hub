@@ -12,14 +12,14 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <>
-      <Card  height={'100%'}>
+      <Card height={"100%"}>
         <Image src={getCroppedImgUrl(game.background_image)}></Image>
         <CardBody>
-          <HStack justifyContent="space-between" marginBottom={'14px'}>
-          <PlatformIconList
-              platforms={game.parent_platforms.map(
+          <HStack justifyContent="space-between" marginBottom={"14px"}>
+            <PlatformIconList
+              platforms={game.parent_platforms?.map(
                 (platform) => platform.platform
-                )}
+                ) || []}
             ></PlatformIconList>
             <CriticScore score={game.metacritic}></CriticScore>
           </HStack>

@@ -10,7 +10,7 @@ import GameHeading from "./Components/GameHeading";
 
 export interface GameQuery { 
   genreId ?: number;
-  platform: Platform | null;
+  platformId : number;
   sortOrder: string;
   searchText: string;
 }
@@ -42,7 +42,7 @@ function App() {
        <Box paddingLeft={2}>
        <GameHeading gameQuery={gameQuery} />
           <HStack  paddingBottom={5}>
-          <PlatformSelector selectedPlatform={gameQuery.platform} selectPlatform={(platform)=> setGameQuery({...gameQuery ,platform})}></PlatformSelector>
+          <PlatformSelector selectedPlatformId={gameQuery.platformId} selectPlatform={(platform)=> setGameQuery({...gameQuery ,platformId : platform.id})}></PlatformSelector>
           <SortSelector sortOrde={gameQuery.sortOrder} onSelectSortOrder={(sortOrder)=> setGameQuery({...gameQuery , sortOrder})}></SortSelector>
           </HStack>
        </Box>

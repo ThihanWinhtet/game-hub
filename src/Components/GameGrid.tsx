@@ -1,4 +1,4 @@
-import { Box, Button, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, SimpleGrid, Spinner } from "@chakra-ui/react";
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -16,7 +16,6 @@ function GameGrid({ gameQuery }: Props) {
     data,
     error,
     isLoading,
-    isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
   } = useGame(gameQuery);

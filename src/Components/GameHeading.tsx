@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react"
 import { Genre } from "../hooks/useGenere"
-import { Platform } from "../hooks/useGame";
+import { Platform } from "../hooks/usePlatform";
 
 interface Props{
     selectedGenre : Genre | null;

@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -27,6 +27,7 @@ function GameGrid({ gameQuery }: Props) {
         hasMore={!!hasNextPage}
         next={() => fetchNextPage()}
         loader={<Spinner></Spinner>}
+        endMessage = {<p className="end_message">end of the list</p>}
       >
         <SimpleGrid columns={{ sm: 1, lg: 3, md: 2, xl: 4 }} spacing={6}>
           {isLoading &&

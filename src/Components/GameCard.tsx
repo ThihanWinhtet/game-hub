@@ -1,4 +1,4 @@
-import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Image, transition } from "@chakra-ui/react";
 import { Game } from "../Entities/Game";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
@@ -17,9 +17,10 @@ function GameCard({ game }: Props) {
         <Card
           height={"100%"}
           cursor={"pointer"}
-          _hover={{ transform: "scale(1.03)" }}
         >
-          <Image src={getCroppedImgUrl(game.background_image)}></Image>
+          <Image src={getCroppedImgUrl(game.background_image)} 
+          _hover={{ transform: "scale(1.03)" }}
+          transition = '.2s'></Image>
           <CardBody>
             <HStack justifyContent="space-between" marginBottom={"14px"}>
               <PlatformIconList
